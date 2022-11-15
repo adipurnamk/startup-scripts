@@ -1,0 +1,19 @@
+
+sudo apt update
+sudo apt install -y apache2 nodejs npm postgresql postgresql-contrib 
+ 
+sudo systemctl start postgresql.service
+
+sudo -i -u postgres
+psql
+CREATE USER dev;
+CREATE USER dev WITH PASSWORD '<your-password-here>';
+\q
+exit
+
+sudo ufw allow 'Apache'
+sudo ufw allow 'Postgres'
+sudo ufw allow 'Node'
+
+sudo ufw status verbose
+sudo ufw app list
