@@ -1,0 +1,2 @@
+pm2 start app.js --watch --name <app_name>
+pm2 save
