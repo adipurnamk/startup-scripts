@@ -1,8 +1,15 @@
 
 sudo apt update
 sudo apt install -y apache2 nodejs npm postgresql postgresql-contrib 
- 
 sudo systemctl start postgresql.service
+
+cd ~
+curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
+sudo bash /tmp/nodesource_setup.sh
+sudo apt install nodejs
+node -v
+npm -v
+npm install pm2@latest -g
 
 sudo -i -u postgres
 psql
